@@ -11,10 +11,7 @@
 ## API
 
 ```js
-var grid = require('iso-grid')({
-    width: 50,
-    height: 50
-});
+var grid = require('iso-grid')();
 
 var cube = grid.cube({
     x: 0,

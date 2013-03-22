@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <title>isometric grid</title>
+    <link rel="stylesheet" type="text/css" href="../build/build.css">
+</head>
+<body>
+    <div id="boxes"></div>
+    <script src="../build/build.js"></script>
+    <script>
+        var isoGrid = require('iso-grid');
+        var grid = isoGrid(document.getElementById('boxes'),{offset:{top:600, left:300}}),
+        slice = [].slice;
+
+        function bunch(arr, n) {
+            // segment an array into parts of size <= n
+            n = n || 1;
+            var result = [];
+            for (var i = 0; i < arr.length / n; i++) {
+                result.push(slice.call(arr, i * n, (i + 1) * n));
+            }
+            return result;
+
+        }
+
+
+        isoGrid.times(30, function(i){
+            grid.add(grid.cube({
+                x: Math.round(Math.random()*10),
+                y: Math.round(Math.random()*10),
+                z: Math.round(Math.random()*10)
+            }));
+        });
+
+        setInterval(function(){
+            isoGrid.each(bunch(grid.faces, 3), function(c){
+                grid.move(c, {
+                    x: Math.round(Math.random()*10),
+                    y: Math.round(Math.random()*10),
+                    z: Math.round(Math.random()*10)    
+                });
+            });
+        },800);
+
+
+    </script>
+
+</body>
+</html>

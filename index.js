@@ -20,7 +20,6 @@ function Grid(el, options) {
     this.el = el || document.body;
     this.el.className = (this.el.className || '').split(' ').concat(['iso-grid']).join(' ');
     options = options || {};
-    this.side = options.side || 10;
     this.faces = [];
     this.offset = options.offset || 0;
 

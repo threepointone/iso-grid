@@ -4,7 +4,15 @@
   "description": "iso-grid",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+    "threepointone/beam": "*",
+    "manuelstofer/each": "*",
+    "segmentio/extend": "*",
+    "threepointone/iso": "*",
+    "threepointone/times": "*",
+    "threepointone/flatten": "*",
+    "yields/isarray": "*"
+  },
   "development": {},
   "license": "MIT",
   "scripts": [
